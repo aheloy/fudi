@@ -1,0 +1,53 @@
+@import '../vars'
+
+
+.footer
+  display: block
+
+  width: 100%
+  height: 100px
+
+  background-color: #f7f7f7
+  border-top: 1px solid #e2e2e2
+  box-sizing: border-box
+
+  .wrapper
+    display: flex
+    flex-flow: row nowrap
+    justify-content: space-between
+    align-items: center
+
+  &__copyright
+    font-size: 14px
+    font-weight: 300
+    color: #c5c5c5
+
+  &__design-by
+    font-size: 14px
+    text-transform: uppercase
+    letter-spacing: 3px
+    color: #c5c5c5
+    font-weight: 300
+
+    a
+      color: #000
+      font-weight: 400
+
+@media all and (max-width: $max_wrapper_width)
+  .footer
+    .wrapper
+      padding: 0 10px
+
+@media all and (max-width: 600px)
+  .footer
+    .wrapper
+      flex-flow: column nowrap
+      justify-content: center
+    
+    &__design-by
+      margin-top: 5px
+
+@media all and (max-width: 400px)
+  .footer
+    &__design-by
+      letter-spacing: 1px
