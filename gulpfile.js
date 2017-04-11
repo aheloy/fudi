@@ -136,7 +136,7 @@ function main(indexHtml) {
           basename: filename,
           suffix: '.min'
         }))
-        .pipe(replace(/url\([^\)\(]*((pictures|dist|bower_components)[^\)\(]*)\)/g, 'url(fudi/$1)'))
+        .pipe(replace(/url\([^\)\(]*((pictures|dist|bower_components)[^\)\(]*)\)/g, 'url("/fudi/$1")'))
         .pipe(gulp.dest(dest))
         .pipe(browserSync.reload({ stream: true }));
 
