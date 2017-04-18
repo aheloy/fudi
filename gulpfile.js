@@ -228,19 +228,17 @@ function main(indexHtml) {
     });
   }
 
-
-
   function addHtmlTask(name, src, dest, filename) {
     gulp.task(name, function () {
       return gulp.src(src)
         .pipe(replace(/(href|src)="\/?((bower_components|pictures|dist).*)"/g, '$1="/fudi/$2"'))
+        .pipe(replace("/dist/dev_main.min.css", '/dist/main.min.css"'))
         .pipe(rename({
           basename: 'index'
         }))
         .pipe(gulp.dest(dest));
     });
   }
-
 
 }
 
