@@ -140,6 +140,16 @@ function main(indexHtml) {
         .pipe(gulp.dest(dest))
         .pipe(browserSync.reload({ stream: true }));
 
+        gulp.src(src)
+        .pipe(cssnano())
+        .pipe(rename({
+          basename: filename,
+          prefix: 'dev_',
+          suffix: '.min'
+        }))
+        .pipe(gulp.dest(dest))
+        .pipe(browserSync.reload({ stream: true }));
+
       return del(src);
     });
   }
